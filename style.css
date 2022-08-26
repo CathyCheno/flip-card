@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(to left, #7ff4bf, #713bc7);
+}
+
+.flip-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 1200;
+ 
+}
+
+/* Hover Effect */
+.flip-container:hover .card {
+  transform: rotateY(-180deg);
+}
+
+.card {
+  width: 400px;
+  height: 400px;
+  transition: all 400ms ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.front-card, 
+.back-card {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+} 
+
+.front-card {
+  background: url(./images/front.png) no-repeat center/cover;
+}
+
+.back-card {
+  background: url(./images/back.png) no-repeat center/cover;
+  transform: rotateY(-180deg);
+}
